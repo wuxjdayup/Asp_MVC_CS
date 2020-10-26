@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>房间一览</h2>
+<table border="1">
+<tr>
+    <th>房间号</th>
+    <th>房间名</th>
+    <th>房间状态</th>
+</tr>
+ @foreach (HoTelManger_MVCFM.Models.RoomsInfo roomsInfo in Model)
+ {
+<tr>
+    <td>@roomsInfo.No</td>
+    <td>@roomsInfo.RommName</td>
+    @if (@roomsInfo.RoomSts.Equals("1"))
+    {
+        <td>已使用</td>
+    }
+    else
+    {
+        <td>未使用</td>
+    }
+
+</tr>
+ }
+
+</table>
+
